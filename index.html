@@ -84,7 +84,27 @@
         </article>
     </main>
     <script>
-        const artigos = document.querySletor
+        const artigos = document.querySelectorAll('article');
+
+        artigos.forEach(artigo => {
+            let qtdLikes = 0;
+            let qtdDislikes = 0;
+
+            const botaoLike = artigo.querySelector('.btn-like');
+            const botaoDislike = artigo.querySelector('.btn-dislike');
+            const spanLikes = artigo.querySelector('.num-likes');
+            const spanDislikes = artigo.querySelector('.num-dislikes');
+
+            botaoLike.addEventListener('click', () => {
+                qtdLikes++;
+                spanLikes.innerText = qtdLikes;
+            });
+
+            botaoDislike.addEventListener('click', () => {
+                qtdDislikes++;
+                spanDislikes.innerText = qtdDislikes;
+            });
+        });
     </script>
 </body>
 </html>

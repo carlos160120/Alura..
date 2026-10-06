@@ -10,13 +10,13 @@
             background-color: #f2f2f2;
         }
         header {
-            background-color: #ffff;
+            background-color: #006437; 
             color: white;
             text-align: center;
-            padding: 100px;
+            padding: 40px; /* Reduzido de 100px para melhor visualização */
         }
         header img {
-            width: 200px;
+            width: 120px;
             margin-top: 10px;
         }
         main {
@@ -50,17 +50,14 @@
         <article>
             <h2>Sobre a Seleção Brasileira</h2>
             <p>
-                A Seleção Brasileira de Futebol representa o Brasil
-                nas principais competições internacionais.
+                A Seleção Brasileira de Futebol representa o Brasil nas principais competições internacionais.
                 É uma das seleções mais famosas da história do futebol.
             </p>
         </article>
+        
         <article>
-            <h2> Curiosidades sobre o Brasil</h2>
-            <p>
-                A Seleção Brasileira possui uma história muito importante
-                no futebol mundial.
-            </p>
+            <h2>Curiosidades sobre o Brasil</h2>
+            <p>A Seleção Brasileira possui uma história muito importante no futebol mundial.</p>
             <ul>
                 <li>O Brasil conquistou cinco Copas do Mundo.</li>
                 <li>O uniforme tradicional é amarelo, azul e verde.</li>
@@ -68,28 +65,32 @@
                 <li>Grandes jogadores já representaram o Brasil.</li>
                 <li>O futebol é um dos esportes mais populares do país.</li>
             </ul>
-            <div class="butao-reacao">
-                <button class="bnt bnt_like"> like (<span class="num-likes">0</span>)</button>
-                <button class="bnt bnt_dislike"> dislike (<span class="num-dislikes">0</span>)</button>
-            </div>
             
+            <!-- CORREÇÃO: Ajustamos as classes para 'btn btn-like' e 'btn btn-dislike' -->
+            <div class="botao-reacao">
+                <button class="btn btn-like">like (<span class="num-likes">0</span>)</button>
+                <button class="btn btn-dislike">dislike (<span class="num-dislikes">0</span>)</button>
+            </div>
         </article>
+        
         <article>
             <h2>Grandes jogadores</h2>
             <p>
-                Ao longo da história, muitos jogadores importantes
-                representaram a Seleção Brasileira, como Pelé,
-                Ronaldo, Ronaldinho Gaúcho, Romário e Neymar.
+                Ao longo da história, muitos jogadores importantes representaram a Seleção Brasileira, 
+                como Pelé, Ronaldo, Ronaldinho Gaúcho, Romário e Neymar.
             </p>
         </article>
     </main>
-    <script>
-        const artigos = document.querySelectorAll('article');
 
-        artigos.forEach(artigo => {
+    <script>
+        // CORREÇÃO: Selecionamos apenas os artigos que realmente possuem a div de reação
+        const artigosComReacao = document.querySelectorAll('article:has(.botao-reacao)');
+
+        artigosComReacao.forEach(artigo => {
             let qtdLikes = 0;
             let qtdDislikes = 0;
 
+            // Agora as classes batem perfeitamente com o HTML
             const botaoLike = artigo.querySelector('.btn-like');
             const botaoDislike = artigo.querySelector('.btn-dislike');
             const spanLikes = artigo.querySelector('.num-likes');

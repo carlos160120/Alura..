@@ -12,12 +12,14 @@
         }
         header {
             background-color: #ffffff;
-            color: white;
+            color: #333333; 
             text-align: center;
             padding: 20px;
+            border-bottom: 3px solid #006437;
         }
         header img {
             width: 100px;
+            height: auto;
         }
         main {
             background-color: white;
@@ -33,6 +35,13 @@
         h2 {
             color: #006437;
         }
+        /* Classe criada para ajustar e exibir a segunda imagem corretamente */
+        .img-conteudo {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 15px 0;
+        }
         button {
             padding: 5px 10px;
             cursor: pointer;
@@ -42,6 +51,7 @@
 <body>
     <header>
         <h1>Seleção Brasileira</h1>
+        <!-- Primeira Imagem (Escudo) -->
         <img src="images.png" alt="Escudo da Seleção">
         <p>Conheça a história da nossa seleção</p>
     </header>
@@ -50,8 +60,13 @@
             <h2>Sobre a Seleção</h2>
             <p>A Seleção Brasileira representa o Brasil nas principais competições do futebol mundial.</p>
         </article>
-        <img src="titulos.png" alt="titulos da Seleção">
-        <p>Conheça a história da nossa seleção</p>
+        
+        <article>
+            <h2>Conquistas</h2>
+            <!-- Segunda Imagem (Títulos) - Agora dentro de um article com classe própria -->
+            <img src="titulos.png" alt="Títulos da Seleção" class="img-conteudo">
+        </article>
+
         <article>
             <h2>Curiosidades</h2>
             <ul>

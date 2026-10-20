@@ -6,36 +6,35 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            margin: 40px;
             background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
         }
         header {
-            background-color: #006437; 
+            background-color: #006437;
             color: white;
             text-align: center;
-            padding: 40px;
+            padding: 20px;
         }
         header img {
-            width: 120px;
-            margin-top: 10px;
+            width: 100px;
         }
         main {
-            width: 80%;
-            margin: auto;
             background-color: white;
+            width: 80%;
+            margin: 20px auto;
             padding: 20px;
         }
         article {
-            margin-top: 30px;
             border-bottom: 1px solid #ccc;
-            padding-bottom: 20px;
+            padding-bottom: 15px;
+            margin-bottom: 15px;
         }
         h2 {
             color: #006437;
         }
         button {
-            margin-right: 5px;
-            padding: 6px 12px;
+            padding: 5px 10px;
             cursor: pointer;
         }
     </style>
@@ -43,70 +42,47 @@
 <body>
     <header>
         <h1>Seleção Brasileira</h1>
-        <img src="images.png" alt="Escudo da Seleção Brasileira">
-        <p>Conheça um pouco sobre a história da nossa seleção</p>
+        <img src="escudo.png" alt="Escudo da Seleção">
+        <p>Conheça a história da nossa seleção</p>
     </header>
     <main>
         <article>
-            <h2>Sobre a Seleção Brasileira</h2>
-            <p>
-                A Seleção Brasileira de Futebol representa o Brasil nas principais competições internacionais.
-                É uma das seleções mais famosas da história do futebol.
-            </p>
-            <header>
-                <h1>Seleção Brasileira</h1>
-                <img src="titulo.png" alt="titulos da seleção">
-                <p>Conheça um pouco sobre a história da nossa seleção</p>
-            </header>
+            <h2>Sobre a Seleção</h2>
+            <p>A Seleção Brasileira representa o Brasil nas principais competições do futebol mundial.</p>
         </article>
-        
         <article>
-            <h2>Curiosidades sobre o Brasil</h2>
-            <p>A Seleção Brasileira possui uma história muito importante no futebol mundial.</p>
+            <h2>Curiosidades</h2>
             <ul>
-                <li>O Brasil conquistou cinco Copas do Mundo.</li>
-                <li>O uniforme tradicional é amarelo, azul e verde.</li>
-                <li>A seleção também é conhecida como Canarinho.</li>
-                <li>Grandes jogadores já representaram o Brasil.</li>
-                <li>O futebol é um dos esportes mais populares do país.</li>
+                <li>O Brasil é pentacampeão da Copa do Mundo.</li>
+                <li>A camisa principal é amarela.</li>
+                <li>O apelido da seleção é Canarinho.</li>
             </ul>
-            
-            <div class="botao-reacao">
-                <button class="btn btn-like">like (<span class="num-likes">0</span>)</button>
-                <button class="btn btn-dislike">dislike (<span class="num-dislikes">0</span>)</button>
+            <div>
+                <button id="btnLike">Like (<span id="numLikes">0</span>)</button>
+                <button id="btnDislike">Dislike (<span id="numDislikes">0</span>)</button>
             </div>
         </article>
-        
+
         <article>
-            <h2>Grandes jogadores</h2>
-            <p>
-                Ao longo da história, muitos jogadores importantes representaram a Seleção Brasileira, 
-                como Pelé, Ronaldo, Ronaldinho Gaúcho, Romário e Neymar.
-            </p>
+            <h2>Grandes Jogadores</h2>
+            <p>Pelé, Ronaldo, Ronaldinho Gaúcho, Romário e Neymar.</p>
         </article>
     </main>
-
     <script>
-        const artigosComReacao = document.querySelectorAll('article:has(.botao-reacao)');
+        let likes = 0;
+        let dislikes = 0;
+        const btnLike = document.getElementById('btnLike');
+        const btnDislike = document.getElementById('btnDislike');
+        const numLikes = document.getElementById('numLikes');
+        const numDislikes = document.getElementById('numDislikes');
 
-        artigosComReacao.forEach(artigo => {
-            let qtdLikes = 0;
-            let qtdDislikes = 0;
-
-            const botaoLike = artigo.querySelector('.btn-like');
-            const botaoDislike = artigo.querySelector('.btn-dislike');
-            const spanLikes = artigo.querySelector('.num-likes');
-            const spanDislikes = artigo.querySelector('.num-dislikes');
-
-            botaoLike.addEventListener('click', () => {
-                qtdLikes++;
-                spanLikes.innerText = qtdLikes;
-            });
-
-            botaoDislike.addEventListener('click', () => {
-                qtdDislikes++;
-                spanDislikes.innerText = qtdDislikes;
-            });
+        btnLike.addEventListener('click', function() {
+            likes = likes + 1;
+            numLikes.innerText = likes;
+        });
+        btnDislike.addEventListener('click', function() {
+            dislikes = dislikes + 1;
+            numDislikes.innerText = dislikes;
         });
     </script>
 </body>
